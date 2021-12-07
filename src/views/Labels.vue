@@ -1,15 +1,11 @@
 <template>
-  <div>
-
-  </div>
+  <div>Labels.vue</div>
 </template>
 
-<script lang="ts" >
-  export default {
-    name: 'Labels'
-  }
+<script lang="ts">
+export default {
+  name: 'Labels'
+}
 </script>
 
-<style lang="sass" scoped>
-
-</style>
+<style lang="sass" scoped></style>
