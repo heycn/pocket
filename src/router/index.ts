@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Money from '@/views/Money.vue'
-import Tab from '@/views/Tab.vue'
+import Tag from '@/views/Tag.vue'
 import Statistics from '@/views/Statistics.vue'
 import NotFound from '@/views/NotFound.vue'
 
@@ -17,8 +17,8 @@ const routes = [
     component: Money
   },
   {
-    path: '/tab',
-    component: Tab
+    path: '/tag',
+    component: Tag
   },
   {
     path: '/statistics',

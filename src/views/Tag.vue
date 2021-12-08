@@ -1,11 +1,11 @@
 <template>
   <Layout>
-    统计
+    标签
   </Layout>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'Statistics'
+  name: 'Tag'
 }
 </script>
