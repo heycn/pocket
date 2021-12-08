@@ -1,5 +1,8 @@
 <template>
-  <div>Tab.vue</div>
+  <div>
+    Tab.vue
+    <Nav />
+  </div>
 </template>
 
 <script lang="ts">
