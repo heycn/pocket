@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'Types',
-  date() {
+  data() {
     return {
       type: '-'
     }
