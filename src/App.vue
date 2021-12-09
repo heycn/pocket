@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $color-text;
   font-family: $font-hei;
+  font-size: 16px;
   line-height: 1.5;
 }
 </style>
