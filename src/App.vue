@@ -9,6 +9,7 @@
 @import '~@/assets/style/reset.scss';
 
 body {
+  background: #f8f8f8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $color-text;
