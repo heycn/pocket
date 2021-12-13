@@ -31,10 +31,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@/assets/style/helper.scss';
+
 .tags {
   background: white;
   font-size: 16px;
-  padding: 0 16px;
+  padding-left: 16px;
   li {
     min-height: 48px;
     display: flex;
@@ -42,15 +44,16 @@ export default {
     justify-content: space-between;
     border-bottom: 1px solid #d9d9d9;
     svg {
-      width: 16px;
-      height: 16px;
-      color: #666;
+      width: 32px;
+      height: 32px;
+      color: #999;
     }
   }
 }
 .createTag {
   background: inherit;
-  border: 1px solid #999;
+  color: $color-highlight;
+  border: 1px solid $color-highlight;
   border-radius: 6px;
   height: 2.5em;
   padding: 0 104px;
