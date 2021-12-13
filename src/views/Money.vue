@@ -15,14 +15,16 @@ import Notes from '@/components/Money/Notes.vue';
 import Tags from '@/components/Money/Tags.vue';
 import {Component, Watch} from 'vue-property-decorator';
 import recordListModel from '@/models/recordListModel';
+import tagListModel from '@/models/tagListModel';
 
 const recordList = recordListModel.fetch();
+const tagList = tagListModel.fetch();
 
 @Component({
   components: {NumberPad, Types, Notes, Tags}
 })
 export default class Money extends Vue {
-  tags = ['衣', '食', '住', '行'];
+  tags = tagList;
   // eslint-disable-next-line no-undef
   recordList: RecordItem[] = recordList;
   // eslint-disable-next-line no-undef
