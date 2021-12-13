@@ -34,8 +34,6 @@ export default class Tags extends Vue {
       } else if (message === 'success') {
         window.alert('添加成功');
       }
-    } else {
-      window.alert('标签名不能为空');
     }
   }
 }

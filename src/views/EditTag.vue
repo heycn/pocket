@@ -1,11 +1,14 @@
 <template>
   <Layout>
-    <div>
-      <Icon name="left" />
-      <span> 编辑标签 </span>
+    <div class="navBar">
+      <Icon class="leftIcon" name="left" />
+      <span class="title"> 编辑标签 </span>
+      <span class="rightIcon"></span>
     </div>
-    <FormItem fieldName="标签名" placeholder="请输入标签名" />
-    <Button>删除标签</Button>
+    <div class="form-wrapper">
+      <FormItem fieldName="标签名" placeholder="请输入标签名" />
+    </div>
+    <div class="button-wrapper"><Button>删除标签</Button></div>
   </Layout>
 </template>
 
@@ -34,4 +37,35 @@ export default class EditTag extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '~@/assets/style/helper.scss';
+
+.navBar {
+  text-align: center;
+  font-size: 16px;
+  line-height: 48px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .leftIcon {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    color: $color-highlight;
+  }
+  .rightIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+}
+.form-wrapper {
+  background: white;
+  margin-top: 8px;
+}
+.button-wrapper {
+  text-align: center;
+  margin-top: 24px;
+}
+</style>
