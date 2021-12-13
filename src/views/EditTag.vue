@@ -8,7 +8,9 @@
     <div class="form-wrapper">
       <FormItem :value="tag.name" @update:value="update" fieldName="标签名" placeholder="请输入标签名" />
     </div>
-    <div class="button-wrapper"><Button @click="remove">删除标签</Button></div>
+    <div class="button-wrapper">
+      <Button @click="remove"> 删除标签 </Button>
+    </div>
   </Layout>
 </template>
 
@@ -40,14 +42,12 @@ export default class EditTag extends Vue {
       tagListModel.update(this.tag.id, name);
     }
   }
-  remove(name: string) {
+  remove() {
     if (this.tag) {
-      tagListModel.update(this.tag.id, name);
+      tagListModel.remove(this.tag.id);
     }
   }
   goBack() {
-    console.log(this.$router.back());
-
     this.$router.back();
   }
 }
