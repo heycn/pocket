@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="navBar">
-      <Icon class="leftIcon" name="left" />
+      <Icon class="leftIcon" name="left" @click="goBack" />
       <span class="title"> 编辑标签 </span>
       <span class="rightIcon"></span>
     </div>
@@ -40,9 +40,15 @@ export default class EditTag extends Vue {
       tagListModel.update(this.tag.id, name);
     }
   }
-  remove(){
-    if(this.tag)
+  remove(name: string) {
+    if (this.tag) {
+      tagListModel.update(this.tag.id, name);
+    }
+  }
+  goBack() {
+    console.log(this.$router.back());
 
+    this.$router.back();
   }
 }
 </script>
