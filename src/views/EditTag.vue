@@ -19,11 +19,11 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import FormItem from '@/components/Money/FormItem.vue';
 import Button from '@/components/Button.vue';
-
 @Component({
   components: {Button, FormItem}
 })
 export default class EditTag extends Vue {
+  // eslint-disable-next-line no-undef
   tag?: Tag = undefined;
 
   created() {

@@ -22,8 +22,7 @@ import Button from '@/components/Button.vue';
 })
 export default class Tags extends Vue {
   tags = window.tagList;
-
-  crateTag() {
+  createTag() {
     const name = window.prompt('请输入标签名');
     if (name) {
       window.createTag(name);
