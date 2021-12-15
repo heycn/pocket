@@ -19,32 +19,26 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import FormItem from '@/components/Money/FormItem.vue';
 import Button from '@/components/Button.vue';
-
 @Component({
   components: {Button, FormItem}
 })
 export default class EditTag extends Vue {
   tag?: Tag = undefined;
-
   created() {
-    // this.tag = store.findTag(this.$route.params.id);
+    // TODO
     if (!this.tag) {
       this.$router.replace('/404');
     }
   }
-
   update(name: string) {
     if (this.tag) {
-      return;
-      // store.updateTag(this.tag.id, name);
+      // TODO
     }
   }
   remove() {
     if (this.tag) {
+      // TODO
       return;
-      // if (store.removeTag(this.tag.id)) {
-      //   this.$router.back();
-      //   window.alert('刪除成功');
       // }
     }
   }

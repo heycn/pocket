@@ -14,11 +14,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
-
 @Component({
   computed: {
     tagList() {
-      // return this.$store.fetchTags();
       return [];
     }
   }
@@ -39,7 +37,6 @@ export default class Tags extends Vue {
     if (!name) {
       return window.alert('标签名不能为空');
     }
-    // store.createTag(name);
   }
 }
 </script>

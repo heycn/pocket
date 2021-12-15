@@ -25,6 +25,7 @@ export default class Tag extends Vue {
   createTag() {
     const name = window.prompt('请输入标签名');
     if (name) {
+      // TODO
       // store.createTag(name);
     }
   }
