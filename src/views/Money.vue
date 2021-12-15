@@ -23,6 +23,8 @@ export default class Money extends Vue {
   get recordList() {
     return this.$store.state.recordList;
   }
+  // TODO
+  // eslint-disable-next-line no-undef
   record: RecordItem = {
     tags: [],
     notes: '',
@@ -40,6 +42,7 @@ export default class Money extends Vue {
   }
 }
 </script>
+
 <style lang="scss">
 .layout-content {
   display: flex;
