@@ -29,19 +29,20 @@
 
 <style lang="scss" scoped>
   @import '~@/assets/style/helper.scss';
-  ::v-deep .type-tabs-item {
-    background: $color-unselected;
-    &.selected {
-      background: $color-highlight;
-      color: #ededed;
-      &::after {
-        display: none;
+  ::v-deep {
+    .type-tabs-item {
+      background: $color-unselected;
+      &.selected {
+        background: $color-highlight;
+        color: #ededed;
+        &::after {
+          display: none;
+        }
       }
     }
-  }
-  ::v-deep .interval-tabs-item {
-    // TODO
-    border-top: 1px solid white;
-    height: 48px;
+    .interval-tabs-item {
+      border-top: 1px solid white;
+      height: 48px;
+    }
   }
 </style>
