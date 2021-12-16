@@ -39,4 +39,9 @@
       }
     }
   }
+  ::v-deep .interval-tabs-item {
+    // TODO
+    border-top: 1px solid white;
+    height: 48px;
+  }
 </style>
