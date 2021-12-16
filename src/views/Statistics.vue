@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <Tabs :classPrefix="type" :dataSource="recordTypeList" :value.sync="type" />
-    <Tabs :classPrefix="interval" :dataSource="intervalList" :value.sync="interval" />
+    <Tabs classPrefix="type" :dataSource="recordTypeList" :value.sync="type" />
+    <Tabs classPrefix="interval" :dataSource="intervalList" :value.sync="interval" />
     <div>
       type: {{ type }}
       <br />
@@ -31,7 +31,6 @@
 
 <style lang="scss" scoped>
   @import '~@/assets/style/helper.scss';
-
   ::v-deep .type-tabs-item {
     background: $color-unselected;
     &.selected {
