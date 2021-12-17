@@ -7,7 +7,6 @@
           {{ beautify(group.title) }} <span>￥{{ group.total }}</span>
         </h3>
         <ol>
-          <!-- TODO: id 可能需要修改 -->
           <li v-for="item in group.items" :key="item.id" class="record">
             <span>{{ tagString(item.tags) }}</span>
             <span class="notes">{{ item.notes }}</span>
