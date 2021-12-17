@@ -90,17 +90,18 @@
 
   ::v-deep {
     .type-tabs-item {
+      @extend %outShadow;
       background: $color-unselected;
       &.selected {
         background: $color-highlight;
         color: #ededed;
+
         &::after {
           display: none;
         }
       }
     }
     .interval-tabs-item {
-      border-top: 1px solid white;
       height: 48px;
     }
   }
