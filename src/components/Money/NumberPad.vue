@@ -21,109 +21,110 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
-@Component
-export default class NumberPad extends Vue {
-  @Prop() readonly value!: number;
-  output = this.value.toString();
-  inputContent(event: MouseEvent) {
-    const button = event.target as HTMLButtonElement;
-    const input = button.textContent as string;
-    if (this.output.length === 16) {
-      return;
-    }
-    if (this.output === '0') {
-      if ('0123456789'.indexOf(input) >= 0) {
-        this.output = input;
-      } else {
-        this.output += input;
+  import Vue from 'vue';
+  import {Component, Prop} from 'vue-property-decorator';
+  @Component
+  export default class NumberPad extends Vue {
+    @Prop(Number) readonly value!: number;
+    output = this.value.toString();
+    inputContent(event: MouseEvent) {
+      const button = event.target as HTMLButtonElement;
+      const input = button.textContent!;
+      if (this.output.length === 16) {
+        return;
       }
-      return;
+      if (this.output === '0') {
+        if ('0123456789'.indexOf(input) >= 0) {
+          this.output = input;
+        } else {
+          this.output += input;
+        }
+        return;
+      }
+      if (this.output.indexOf('.') >= 0 && input === '.') {
+        return;
+      }
+      this.output += input;
     }
-    if (this.output.indexOf('.') >= 0 && input === '.') {
-      return;
+    remove() {
+      if (this.output.length === 1) {
+        this.output = '0';
+      } else {
+        this.output = this.output.slice(0, -1);
+      }
     }
-    this.output += input;
-  }
-  remove() {
-    if (this.output.length === 1) {
+    clear() {
       this.output = '0';
-    } else {
-      this.output = this.output.slice(0, -1);
+    }
+    ok() {
+      const number = parseFloat(this.output);
+      this.$emit('update:value', number);
+      this.$emit('submit', number);
+      this.output = '0';
     }
   }
-  clear() {
-    this.output = '0';
-  }
-  ok() {
-    this.$emit('update:value', this.output);
-    this.$emit('submit', this.output);
-    this.output = '0';
-  }
-}
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/helper.scss';
-.numberPad {
-  .output {
-    @extend %clearFix;
-    background: #f6f6f6;
-    font-size: 36px;
-    font-family: 'Lucida Console', Courier, monospace;
-    font-weight: 900;
-    padding: 5px 16px;
-    text-align: right;
-    height: 64px;
-  }
-  .buttons {
-    @extend %clearFix;
-    button {
-      width: 25%;
-      height: 64px;
-      font-family: Verdana, Arial, Helvetica, sans-serif;
+  @import '~@/assets/style/helper.scss';
+  .numberPad {
+    .output {
+      @extend %clearFix;
+      background: #f6f6f6;
+      font-size: 36px;
+      font-family: 'Lucida Console', Courier, monospace;
       font-weight: 900;
-      float: left;
-      background: transparent;
-      border: none;
-      &.ok {
-        height: 64 * 2px;
-        float: right;
-      }
-      &.zero {
-        width: 25 * 2%;
-      }
-      $bg: #ffffff;
-      &:nth-child(1) {
-        background: $bg;
-      }
-      &:nth-child(2),
-      &:nth-child(5) {
-        background: darken($bg, 4%);
-      }
-      &:nth-child(3),
-      &:nth-child(6),
-      &:nth-child(9) {
-        background: darken($bg, 4 * 2%);
-      }
-      &:nth-child(4),
-      &:nth-child(7),
-      &:nth-child(10) {
-        background: darken($bg, 4 * 3%);
-      }
-      &:nth-child(8),
-      &:nth-child(11),
-      &:nth-child(13) {
-        background: darken($bg, 4 * 4%);
-      }
-      &:nth-child(14) {
-        background: darken($bg, 4 * 5%);
-      }
-      &:nth-child(12) {
-        background: darken($bg, 4 * 6%);
+      padding: 5px 16px;
+      text-align: right;
+      height: 64px;
+    }
+    .buttons {
+      @extend %clearFix;
+      button {
+        width: 25%;
+        height: 64px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        float: left;
+        background: transparent;
+        border: none;
+        &.ok {
+          height: 64 * 2px;
+          float: right;
+        }
+        &.zero {
+          width: 25 * 2%;
+        }
+        $bg: #ffffff;
+        &:nth-child(1) {
+          background: $bg;
+        }
+        &:nth-child(2),
+        &:nth-child(5) {
+          background: darken($bg, 4%);
+        }
+        &:nth-child(3),
+        &:nth-child(6),
+        &:nth-child(9) {
+          background: darken($bg, 4 * 2%);
+        }
+        &:nth-child(4),
+        &:nth-child(7),
+        &:nth-child(10) {
+          background: darken($bg, 4 * 3%);
+        }
+        &:nth-child(8),
+        &:nth-child(11),
+        &:nth-child(13) {
+          background: darken($bg, 4 * 4%);
+        }
+        &:nth-child(14) {
+          background: darken($bg, 4 * 5%);
+        }
+        &:nth-child(12) {
+          background: darken($bg, 4 * 6%);
+        }
       }
     }
   }
-}
 </style>
