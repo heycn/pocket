@@ -3,9 +3,9 @@
     <NumberPad :value.sync="record.amount" @submit="saveRecord" />
     <Tabs :dataSource="recordTypeList" :value.sync="record.type" />
     <div class="notes">
-      <FormItem fieldName="备注" placeholder="输入备注..." @update:value="onUpdateNotes" />
+      <FormItem fieldName="备注" placeholder="输入备注..." :value.sync="record.notes" />
     </div>
-    <Tags />
+    <Tags @update:value="record.tags = $event" />
   </Layout>
 </template>
 
@@ -38,7 +38,14 @@
       this.record.notes = value;
     }
     saveRecord() {
+      if (!this.record.tags || this.record.tags.length === 0) {
+        return window.alert('您还没有选择标签');
+      }
       this.$store.commit('createRecord', this.record);
+      if (this.$store.state.createRecordError === null) {
+        window.alert('保存成功');
+        this.record.notes = '';
+      }
     }
   }
 </script>

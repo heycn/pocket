@@ -18,3 +18,9 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
+// 页面刷新自动滚到底
+window.onload = () =>
+  setTimeout(() => {
+    window.scroll(0, 9999);
+  }, 0);
