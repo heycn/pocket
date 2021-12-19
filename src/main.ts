@@ -22,5 +22,5 @@ new Vue({
 // 页面刷新自动滚到底
 window.onload = () =>
   setTimeout(() => {
-    window.scroll(0, 9999);
+    window.scroll(0, 200);
   }, 0);
