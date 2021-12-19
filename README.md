@@ -1,26 +1,14 @@
 # 口袋记账
 
-## Project setup
+### 开发
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 部署
 ```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
+sh deploy.sh
 ```
