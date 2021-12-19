@@ -17,8 +17,12 @@
     line-height: 1.5;
   }
 
-  #app {
-    max-height: 500px;
-    margin: 0 auto;
+  @media (min-width: 500px) {
+    #app {
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+      max-width: 500px;
+      margin: 0 auto;
+    }
   }
 </style>
